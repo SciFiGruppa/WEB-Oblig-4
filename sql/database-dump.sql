@@ -100,3 +100,9 @@ MODIFY `userid` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 ALTER TABLE `student`
 ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`klassekode`) REFERENCES `klasse` (`klassekode`);
+
+--
+-- Sett inn Geir Bjarvin som bruker med passordet 123
+--
+INSERT INTO `users` (`userid`, `username`, `password`, `createddate`, `updateddate`, `lastlogin`) VALUES
+(1, 'geirbjarvin', '$2y$10$1ACnp1DDqPN/kFVfdXpxEOHhlku7i3U2nPXAa0a8wojQNl.WZy3ZK', '2015-04-08 09:00:00', NULL, NULL);
