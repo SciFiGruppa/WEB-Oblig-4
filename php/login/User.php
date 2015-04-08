@@ -14,7 +14,7 @@
         public function __construct ($username, $password) {
             $db = new DatabaseConnector();
             $this->db = $db->getDBLink();
-            $this->_username = $username;
+            $this->_username = strtolower($username);
             $this->_password = $password;
         }
 
@@ -34,6 +34,7 @@
         public function check () {
             if ($this->userExists()) {
                 if ($this->checkPassword()) {
+                    $this->setLogin();
                     return 2;
                 }
                 return 1;
@@ -94,7 +95,7 @@
          *                                  false if the user does not exist
          */
         private function userExists () {
-            $sql = "SELECT username FROM users WHERE username = ?";
+            $sql = "SELECT LOWER(username) FROM users WHERE username = ?";
             $stmt = $this->db->prepare($sql);
 
             $stmt->bind_param("s", $this->_username);
@@ -105,6 +106,17 @@
                 return true;
             }
             return false;
+        }
+
+        /**
+         * Private method to set a users last login value
+         */
+        private function setLogin () {
+            $sql = "UPDATE users SET lastlogin = NOW() WHERE username = ?";
+            $stmt = $this->db->prepare($sql);
+
+            $stmt->bind_param("s", $this->_username);
+            $stmt->execute();
         }
 
         /**

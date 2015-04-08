@@ -2,7 +2,7 @@
     require_once 'User.php';
     session_start();
     if (isset($_POST['login'], $_POST['username'], $_POST['password'], $_POST['req'])) {
-        $username = $_POST['username'];
+        $username = strtolower($_POST['username']);
         $password = $_POST['password'];
         $request_uri = $_POST['req'];
         $user = new User($username, $password);
