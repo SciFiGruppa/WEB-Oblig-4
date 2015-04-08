@@ -30,7 +30,7 @@
                 break;
             // Unexpected error happened
             default:
-                $_SESSION['error_msg'] = Config::$USER_UNEXPECTED_ERROR;
+                $_SESSION['error_msg'] = Config::$UNKNOWN_ERROR;
                 header("Location:".$request_uri);
                 exit;
                 break;

@@ -19,11 +19,14 @@ final class Config {
     // Login/register messages
     public static $USER_LOGIN_ERROR = "Feil brukernavn eller passord.";
     public static $USER_COOKIE_VALUE = true;
-    public static $USER_UNEXPECTED_ERROR = "En uventet feil skjedde.";
-
+    public static $UNKNOWN_ERROR = "En uventet feil skjedde.";
+    public static $PASSWORD_NOT_MATCHING = "Passordene du skrev inn stemmer ikke overens.";
     public static $REGISTER_USER_DUPLICATE = "Denne brukeren finnes allerede.";
-    public static $REGISTER_UNKNOWN_ERROR = "En uventet feil skjedde.";
     public static function REGISTER_SUCCESS ($username) {
         return "Brukeren {$username} ble opprettet.";
+    }
+    public static $USER_NOT_EXIST = "Brukeren finnes ikke.";
+    public static function CHANGE_PASSWORD_SUCCESS ($username) {
+        return "Passordet til {$username} ble endret.";
     }
 }

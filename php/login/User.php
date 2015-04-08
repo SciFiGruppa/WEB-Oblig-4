@@ -1,6 +1,6 @@
 <?php
-    require_once '../connect.php';
-    require_once '../constants.php';
+    require_once dirname(dirname(__FILE__)).'\connect.php';
+    require_once dirname(dirname(__FILE__)).'\constants.php';
     class User {
         private $_username,
                 $_password,
@@ -14,7 +14,7 @@
         public function __construct ($username, $password) {
             $db = new DatabaseConnector();
             $this->db = $db->getDBLink();
-            $this->_username = strtolower($username);
+            $this->_username = $username;
             $this->_password = $password;
         }
 
@@ -26,7 +26,7 @@
         }
 
         /**
-         * This function checks if a user can authenticate based on parameters passed in constructor
+         * This method checks if a user can authenticate based on parameters passed in constructor
          * @return int Function returns 0 the user does not exist,
          *                              1 if the password is wrong,
          *                              2 if the user is authenticated
@@ -43,7 +43,7 @@
         }
 
         /**
-         * This function creates a user based on parameters passed in constructor
+         * This method creates a user based on parameters passed in constructor
          * @return int Function returns 0 if the user exists,
          *                              1 if the user was not created (due to some error)
          *                              2 if the user is created
@@ -68,7 +68,7 @@
         }
 
         /**
-         * This function changes the password of a user to the specified
+         * This method changes the password of a user to the specified
          * @return int Function returns 0 if the user does not exist
          *                              1 if the password was not changed because of some error
          *                              2 if the password was changed
@@ -88,6 +88,33 @@
             }
             return 0;
         }
+        /**
+         * This method returns a user or all users if param is not specified
+         */
+        public function get ($username = false) {
+            if (!$username) {
+
+                $sql = "SELECT userid, username, createddate, lastlogin FROM users";
+                $query = $this->db->query($sql);
+                $rows = array();
+                
+                while($row = $query->fetch_array(MYSQLI_ASSOC)) {
+                    $rows[] = $row;
+                }
+
+                return $rows;
+
+            } else {
+
+                $sql = "SELECT userid, username, createddate, lastlogin FROM users WHERE username = ?";
+                $stmt = $this->db->prepare($sql);
+
+                $stmt->execute();
+                $stmt->bind_result($userid, $username, $createddate, $lastlogin);
+                return array('userid' => $userid, 'username' => $username, 'createddate' => $createddate, 'lastlogin' => $lastlogin);
+
+            }
+        }
 
         /**
          * Private method to check if a user exists
@@ -98,7 +125,7 @@
             $sql = "SELECT LOWER(username) FROM users WHERE username = ?";
             $stmt = $this->db->prepare($sql);
 
-            $stmt->bind_param("s", $this->_username);
+            $stmt->bind_param("s", strtolower($this->_username));
             $stmt->execute();
             $stmt->store_result();
 

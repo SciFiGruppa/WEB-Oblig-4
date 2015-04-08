@@ -19,7 +19,7 @@
                     break;
                 // Unknown error happened when registering user
                 case 1:
-                    $_SESSION['error_msg'] = Config::$REGISTER_UNKNOWN_ERROR;
+                    $_SESSION['error_msg'] = Config::$UNKNOWN_ERROR;
                     header("Location: $request_uri");
                     break;
                 // User was created successfully
@@ -29,12 +29,15 @@
                     break;
                 // Unkown error happened when registering user
                 default:
-                    $_SESSION['error_msg'] = Config::$REGISTER_UNKNOWN_ERROR;
+                    $_SESSION['error_msg'] = Config::$UNKNOWN_ERROR;
                     header("Location: $request_uri");
                     break;
             }
 
         } else {
-            echo "Double check your password.";
+            $_SESSION['error_msg'] = Config::$PASSWORD_NOT_MATCHING;
+            header("Location: $request_uri");
         }
+    } else {
+        header("Location: ../../login.php");
     }

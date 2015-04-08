@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <section id="login">
+    <section id="user_box">
         <header>
             <h1>Vennligst logg inn</h1>
         </header>

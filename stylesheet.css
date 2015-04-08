@@ -48,10 +48,13 @@ a:hover, a:active, a:focus {
 	text-decoration: none;
 	background-color: #3E3683;
 }
+
 /* User admin bar */
+
 div.user_admin_bar {
 	text-align: center;
 	margin: 70px 0 0 0;
+	background-color: rgb(234, 237, 255);
 }
 div.user_admin_bar ul {
 	margin: 0;
@@ -60,9 +63,17 @@ div.user_admin_bar ul {
 }
 div.user_admin_bar ul li {
 	display: inline-block;
-	margin: 0 10px;
+	padding: 10px;
 }
+div.user_admin_bar ul li:hover {
+	background-color: #D9DDF5;
+}
+div.user_admin_bar ul li a {
+	color: #000;
+}
+
 /* End user admin bar */
+
 footer {
 	clear: left;
 	padding-top: 2px;
@@ -149,23 +160,22 @@ left: 60px; /*position where enlarged image should offset horizontally */
 
 /* login og midlertidig registrering */
 
-section#login {
-	width: 30%;
+section#user_box {
+	width: 40%;
 	margin: 100px auto 0 auto;
 	background-color: #fff;
-	color: #FFF;
 	box-shadow: 0 0 4px #CFCFCF;
 }
-section#login header {
+section#user_box header {
 	width: 100%;
 }
-section#login h1 {
+section#user_box h1 {
 	color: #FFF;
 	padding: 20px 0 20px 20px;
-	margin: 0;
+	margin: 0 0 10px 0;
 	background-color: #009EFF;
 }
-section#login input.type {
+section#user_box input.type {
 	width: 100%;
 	font-size: 20px;
 	padding: 10px;
@@ -175,7 +185,7 @@ section#login input.type {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-section#login div.error_message {
+section#user_box div.error_message {
 	width: 100%;
 	padding: 20px 10px;
 	margin: 10px 0;
@@ -188,7 +198,7 @@ section#login div.error_message {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-section#login div.success_message {
+section#user_box div.success_message {
 	width: 100%;
 	padding: 20px 10px;
 	margin: 10px 0;
@@ -201,7 +211,7 @@ section#login div.success_message {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-section#login input.submit {
+section#user_box input.submit {
 	font-size: 20px;
 	outline: none;
 	background-color: #009EFF;
@@ -216,12 +226,115 @@ section#login input.submit {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-section#login input.submit:hover {
+section#user_box input.submit:hover {
 	background-color: #0091EA;
 }
-section#login input.submit:active {
+section#user_box input.submit:active {
 	background-color: #007ECB;
 }
-section#login div {
+section#user_box div {
 	padding: 10px 20px;
+}
+
+/* Brukeradministrasjon */
+section#administer_users {
+	width: 40%;
+	margin: 0 auto;
+	background-color: #fff;
+	box-shadow: 0 0 4px #CFCFCF;
+}
+section#administer_users header {
+	width: 100%;
+}
+section#administer_users h1 {
+	color: #FFF;
+	padding: 20px 0 20px 20px;
+	margin: 0 0 10px 0;
+	background-color: #009EFF;
+}
+section#administer_users h2 {
+	padding: 0 20px;
+}
+section#administer_users table {
+	width: 90%;
+	margin: 10px auto 0 auto;
+	padding: 0 0 20px 0;
+}
+section#administer_users table th {
+	padding: 0 0 10px 0;
+}
+section#administer_users table td {
+	text-align: center;
+}
+section#administer_users input.type {
+	width: 100%;
+	font-size: 20px;
+	padding: 10px;
+	border: 1px solid #E0E0E0;
+	outline: none;
+	-webkit-box-sizing: border-box;‌​
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+section#administer_users div.error_message {
+	width: 100%;
+	padding: 20px 10px;
+	margin: 10px 0;
+	background-color: red;
+	text-align: center;
+	color: #FFF;
+	font-weight: bold;
+	box-shadow: 0 0 4px #CFCFCF;
+	-webkit-box-sizing: border-box;‌​
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+section#administer_users div.success_message {
+	width: 100%;
+	padding: 20px 10px;
+	margin: 10px 0;
+	background-color: green;
+	text-align: center;
+	color: #FFF;
+	font-weight: bold;
+	box-shadow: 0 0 4px #CFCFCF;
+	-webkit-box-sizing: border-box;‌​
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+section#administer_users input.submit {
+	font-size: 20px;
+	outline: none;
+	background-color: #009EFF;
+	border: none;
+	width: 100%;
+	padding: 20px 0;
+	font-weight: bold;
+	color: #FFF;
+	cursor: pointer;
+	margin: 0 0 20px 0;
+	-webkit-box-sizing: border-box;‌​
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+section#administer_users input.submit:hover {
+	background-color: #0091EA;
+}
+section#administer_users input.submit:active {
+	background-color: #007ECB;
+}
+section#administer_users div {
+	padding: 10px 20px;
+}
+section#administer_users h2 {
+	padding: 0 20px;
+}
+section#administer_users select {
+	width: 100%;
+	font-size: 20px;
+	padding: 10px;
+	border: 1px solid #E0E0E0;
+	outline: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
