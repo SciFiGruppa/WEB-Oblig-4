@@ -45,8 +45,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `createddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updateddate` timestamp DEFAULT NULL,
-  `lastlogin` timestamp DEFAULT NULL
+  `updateddate` timestamp NULL,
+  `lastlogin` timestamp NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
