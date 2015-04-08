@@ -67,6 +67,28 @@
         }
 
         /**
+         * This function changes the password of a user to the specified
+         * @return int Function returns 0 if the user does not exist
+         *                              1 if the password was not changed because of some error
+         *                              2 if the password was changed
+         */
+        public function changePassword () {
+            if ($this->userExists()) {
+                $newPassword = $this->createHash($this->_password);
+                $sql = "UPDATE users SET password = ? WHERE username = ?";
+                $stmt = $this->db->prepare($sql);
+
+                $stmt->bind_param("ss", $newPassword, $this->_username);
+                $stmt->execute();
+                if ($stmt->affected_rows == 1) {
+                    return 2;
+                }
+                return 1;
+            }
+            return 0;
+        }
+
+        /**
          * Private method to check if a user exists
          * @return boolean Function returns true if the user exists,
          *                                  false if the user does not exist

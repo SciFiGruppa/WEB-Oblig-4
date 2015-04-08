@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if (!isset($_SESSION['user'])) {
+    if (!isset($_SESSION['user']) || isset($_SESSION['user']) && $_SESSION['user'] == false) {
         header('Location: login.php');
     }
 ?>
@@ -29,6 +29,11 @@
 <br>
 <br>
 <div id="body">
-
-        
-    
+<div class="user_admin_bar">
+    <ul>
+        <li>Logget inn som <strong><?php echo $_SESSION['username']; ?></strong></li>
+        <li><a href="#">Administrer Brukere</a></li>
+        <li><a href="#">Ny Bruker</a></li>
+        <li><a href="php/login/logout.php">Logg Ut</a></li>
+    </ul>
+</div>

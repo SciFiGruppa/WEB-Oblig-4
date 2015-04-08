@@ -48,6 +48,21 @@ a:hover, a:active, a:focus {
 	text-decoration: none;
 	background-color: #3E3683;
 }
+/* User admin bar */
+div.user_admin_bar {
+	text-align: center;
+	margin: 70px 0 0 0;
+}
+div.user_admin_bar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+div.user_admin_bar ul li {
+	display: inline-block;
+	margin: 0 10px;
+}
+/* End user admin bar */
 footer {
 	clear: left;
 	padding-top: 2px;
@@ -147,6 +162,7 @@ section#login header {
 section#login h1 {
 	color: #FFF;
 	padding: 20px 0 20px 20px;
+	margin: 0;
 	background-color: #009EFF;
 }
 section#login input.type {
@@ -155,6 +171,32 @@ section#login input.type {
 	padding: 10px;
 	border: 1px solid #E0E0E0;
 	outline: none;
+	-webkit-box-sizing: border-box;‌​
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+section#login div.error_message {
+	width: 100%;
+	padding: 20px 10px;
+	margin: 10px 0;
+	background-color: red;
+	text-align: center;
+	color: #FFF;
+	font-weight: bold;
+	box-shadow: 0 0 4px #CFCFCF;
+	-webkit-box-sizing: border-box;‌​
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+section#login div.success_message {
+	width: 100%;
+	padding: 20px 10px;
+	margin: 10px 0;
+	background-color: green;
+	text-align: center;
+	color: #FFF;
+	font-weight: bold;
+	box-shadow: 0 0 4px #CFCFCF;
 	-webkit-box-sizing: border-box;‌​
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -169,7 +211,10 @@ section#login input.submit {
 	font-weight: bold;
 	color: #FFF;
 	cursor: pointer;
-	margin: 20px 0;
+	margin: 0 0 20px 0;
+	-webkit-box-sizing: border-box;‌​
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 section#login input.submit:hover {
 	background-color: #0091EA;
