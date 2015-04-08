@@ -125,6 +125,58 @@ left: 60px; /*position where enlarged image should offset horizontally */
 .float-left {
 	float: left;
 }
+.float-right {
+	float: right;
+}
 .clear {
 	clear: both;
+}
+
+/* login og midlertidig registrering */
+
+section#login {
+	width: 30%;
+	margin: 100px auto 0 auto;
+	background-color: #fff;
+	color: #FFF;
+	box-shadow: 0 0 4px #CFCFCF;
+}
+section#login header {
+	width: 100%;
+}
+section#login h1 {
+	color: #FFF;
+	padding: 20px 0 20px 20px;
+	background-color: #009EFF;
+}
+section#login input.type {
+	width: 100%;
+	font-size: 20px;
+	padding: 10px;
+	border: 1px solid #E0E0E0;
+	outline: none;
+	-webkit-box-sizing: border-box;‌​
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+section#login input.submit {
+	font-size: 20px;
+	outline: none;
+	background-color: #009EFF;
+	border: none;
+	width: 100%;
+	padding: 20px 0;
+	font-weight: bold;
+	color: #FFF;
+	cursor: pointer;
+	margin: 20px 0;
+}
+section#login input.submit:hover {
+	background-color: #0091EA;
+}
+section#login input.submit:active {
+	background-color: #007ECB;
+}
+section#login div {
+	padding: 10px 20px;
 }
