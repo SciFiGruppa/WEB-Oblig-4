@@ -16,8 +16,9 @@
 <body>
     <section id="administer_users">
         <header>
-            <h1>Brukeradministrasjon</h1>
+            <h1 class="">Brukeradministrasjon</h1>
         </header>
+        <a href="../../../index.php" class="float-right back">Gå til forsiden</a>
         <h2>Brukerliste</h2>
         <table>
             <thead>

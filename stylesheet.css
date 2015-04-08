@@ -238,19 +238,28 @@ section#user_box div {
 
 /* Brukeradministrasjon */
 section#administer_users {
-	width: 40%;
+	width: 60%;
 	margin: 0 auto;
 	background-color: #fff;
 	box-shadow: 0 0 4px #CFCFCF;
 }
 section#administer_users header {
-	width: 100%;
-}
-section#administer_users h1 {
 	color: #FFF;
 	padding: 20px 0 20px 20px;
 	margin: 0 0 10px 0;
 	background-color: #009EFF;
+}
+section#administer_users a {
+	margin-right: 20px;
+	margin-top: 15px;
+	color: #009EFF;
+	font-weight: normal;
+}
+section#administer_users h1 {
+	/*color: #FFF;
+	padding: 20px 0 20px 20px;
+	margin: 0 0 10px 0;
+	background-color: #009EFF;*/
 }
 section#administer_users h2 {
 	padding: 0 20px;
