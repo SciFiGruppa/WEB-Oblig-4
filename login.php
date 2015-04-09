@@ -55,6 +55,9 @@
         <?php
         }
         ?>
+        <p class="reglink">
+            eller <a href="register.php">registrer deg</a>
+        </p>
     </section>
 </body>
 </html>
